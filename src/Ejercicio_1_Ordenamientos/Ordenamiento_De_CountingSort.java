@@ -4,6 +4,9 @@
  */
 package Ejercicio_1_Ordenamientos;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  *
  * @author lucho

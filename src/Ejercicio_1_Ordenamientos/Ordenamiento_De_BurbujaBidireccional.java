@@ -12,67 +12,58 @@ import java.util.List;
  * @author lucho
  */
 public class Ordenamiento_De_BurbujaBidireccional {
-    public static void cocktailSort(List<Integer> list) {
-        boolean swapped;
-        int start = 0;
-        int end = list.size() - 1;
-
-        do {
-            swapped = false;
-
-            // Iteración hacia adelante (elementos más grandes hacia el final)
-            for (int i = start; i < end; i++) {
-                if (list.get(i) > list.get(i + 1)) {
-                    // Intercambiar elementos
-                    int temp = list.get(i);
-                    list.set(i, list.get(i + 1));
-                    list.set(i + 1, temp);
-                    swapped = true;
-                }
-            }
-
-            if (!swapped) {
-                break; // Si no hubo intercambios, la lista está ordenada
-            }
-
-            swapped = false;
-            end--;
-
-            // Iteración hacia atrás (elementos más pequeños hacia el principio)
-            for (int i = end - 1; i >= start; i--) {
-                if (list.get(i) > list.get(i + 1)) {
-                    // Intercambiar elementos
-                    int temp = list.get(i);
-                    list.set(i, list.get(i + 1));
-                    list.set(i + 1, temp);
-                    swapped = true;
-                }
-            }
-
-            start++;
-        } while (swapped);
-    }
-
     public static void main(String[] args) {
-        List<Integer> list = new ArrayList<>();
-        list.add(64);
-        list.add(34);
-        list.add(25);
-        list.add(12);
-        list.add(22);
-        list.add(11);
-        list.add(90);
-
-        System.out.println("Lista original:");
-        for (int num : list) {
-            System.out.print(num + " ");
+        List<Integer> bidirec;
+        bidirec = new ArrayList<>();
+        
+        bidirec.add(4);
+        bidirec.add(2);
+        bidirec.add(6);
+        bidirec.add(12);
+        bidirec.add(0);
+        bidirec.add(8);
+        bidirec.add(14);
+        bidirec.add(10);
+        Bidireccional(bidirec);
+        System.out.println("Este es el ordenamiento Burbuja Bidireccional \n");
+        System.out.println("Estos son los elementos ya ordenado: ");
+        for(int l : bidirec){
+            System.out.println(l + " ");
         }
-
-        cocktailSort(list);
-
-        System.out.println("\nLista ordenada:");
-        for (int num : list) {
-            System.out.print(num + " ");
-        }
+    }
+    
+    public static void Bidireccional(List<Integer> bidirec){
+        
+        boolean a;
+        int w = 0;
+        int e = bidirec.size()-1;
+        
+        do{
+            a = false;
+            
+            for (int k = w; k < e; k++) {
+                if(bidirec.get(k)>bidirec.get(k+1)){
+                    int p = bidirec.get(k);
+                    bidirec.set(k, bidirec.get(k+1));
+                    bidirec.set(k+1, p);
+                    a = true;
+                }
+            }
+            if(!a){
+                break;
+            }
+            
+            a = false;
+            e--;
+            
+            for(int r = e - 1; r>=w; r--){
+                if(bidirec.get(r)>bidirec.get(r+1)){
+                    int h = bidirec.get(r);
+                    bidirec.set(r, bidirec.get(r+1));
+                    bidirec.set(r+1, h);
+                }
+            }
+            w++;
+        }while(a);
     }
 }
