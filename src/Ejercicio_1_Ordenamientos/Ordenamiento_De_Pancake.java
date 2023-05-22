@@ -12,54 +12,49 @@ import java.util.List;
  * @author lucho
  */
 public class Ordenamiento_De_Pancake {
-    public static void shellSort(List<Integer> list) {
-        int n = list.size();
+    public static void main(String[] args) {
+        List<Integer> cake;
+        cake = new ArrayList<>();
         
-        // Calcula el intervalo inicial
-        int intervalo = 1;
-        while (intervalo < n / 3) {
-            intervalo = intervalo * 3 + 1;
-        }
+        cake.add(14);
+        cake.add(10);
+        cake.add(6);
+        cake.add(2);
+        cake.add(0);
+        cake.add(4);
+        cake.add(8);
+        cake.add(12);
         
-        // Aplica el algoritmo de Shell
-        while (intervalo > 0) {
-            for (int i = intervalo; i < n; i++) {
-                int temp = list.get(i);
-                int j = i;
-                
-                // Realiza inserción directa en el subgrupo correspondiente
-                while (j >= intervalo && list.get(j - intervalo) > temp) {
-                    list.set(j, list.get(j - intervalo));
-                    j -= intervalo;
-                }
-                
-                list.set(j, temp);
-            }
-            
-            intervalo = (intervalo - 1) / 3;
+        cakesPan(cake);
+        System.out.println("Este es el ordenamiento panqueque \n");
+        System.out.println("Estos son los elementos del ordenamiento panqueque ya ordenados: ");
+        for(int l : cake){
+            System.out.println(l );
         }
     }
-    
-    public static void main(String[] args) {
-        List<Integer> list = new ArrayList<>();
-        list.add(64);
-        list.add(34);
-        list.add(25);
-        list.add(12);
-        list.add(22);
-        list.add(11);
-        list.add(90);
-        
-        System.out.println("Lista original:");
-        for (int num : list) {
-            System.out.print(num + " ");
+    public static void cakesPan(List<Integer> cake){
+        for(int n = cake.size(); n>=1; n--){
+            int index = find(cake, n);
+            flip(cake, index);
+            flip(cake, n-1);
         }
-        
-        shellSort(list);
-        
-        System.out.println("\nLista ordenada:");
-        for (int num : list) {
-            System.out.print(num + " ");
+    }
+
+    private static int find(List<Integer> cake, int target) {
+        for(int i = 0; i>cake.size(); i++){
+            if(cake.get(i) == target){
+                return i;
+            }
+        }       
+        return -1;
+    }
+
+    private static void flip(List<Integer> cake, int j) {
+        int i=0;
+        while(i<j){
+            int temp = cake.get(i);
+            cake.set(i++, cake.get(j));
+            cake.set(j--, temp);
         }
     }
 }
