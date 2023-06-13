@@ -30,6 +30,7 @@ public class Punto_1_2_Del_Ejercicio_1 {
         person.add(4);
         person.add(20);
         person.add(1);
+        person.add(15);
         person.add(6);
         person.add(7);
         person.add(2);
@@ -40,8 +41,28 @@ public class Punto_1_2_Del_Ejercicio_1 {
         person.add(14);
         person.add(18);
         person.add(12);
+        person.add(17);
+        person.add(16);
         System.out.println("Estos son los numeros ya ordenados y sus multiplos: ");
         listaPersonal(person);
+        
+         // Imprimimos el tamaño de la lista de números
+        System.out.println("Tamaño de la lista de números: " + person);
+
+        // Accedemos a un elemento de la lista
+        int primerNumero = person.get(0);
+        System.out.println("Accedemos al primer número de la lista: " + primerNumero);
+
+        // Modificamos un elemento de la lista
+        person.set(1, 100);
+        person.set(2, 400);
+        person.set(7, 200);
+        System.out.println("Lista de números modificada: " + person);
+
+        // Eliminamos un elemento de la lista
+        person.remove(2);
+        System.out.println("Lista de números después de eliminar un elemento: " + person);
+
     }
     
        public static void listaPersonal(List<Integer> person){

@@ -43,6 +43,25 @@ public class Punto_1_3_Del_Ejercicio_1 {
             System.out.println();
         }
         System.out.println("\n");
+        // Imprimimos el tamaño de la lista de números
+        System.out.println("Tamaño de la lista de números: " + factor);
+
+        // Accedemos a un elemento de la lista
+        int primerNumero = factor.get(0);
+        System.out.println("Accedemos al primer número de la lista: " + primerNumero);
+
+        // Modificamos un elemento de la lista
+        factor.set(1, 100);
+        factor.set(2, 400);
+        factor.set(7, 200);
+        System.out.println("Lista de números modificada: " + factor);
+
+        // Eliminamos un elemento de la lista
+        factor.remove(2);
+        System.out.println("Lista de números después de eliminar un elemento: " + factor);
+        
+        
+        System.out.println("\n");
         List<Integer> casilla;
         casilla = new ArrayList<>();
         casilla.add(7);
@@ -66,6 +85,25 @@ public class Punto_1_3_Del_Ejercicio_1 {
             }
             System.out.println();
         }
+        
+        System.out.println("\n");
+        // Imprimimos el tamaño de la lista de números
+        System.out.println("Tamaño de la lista de números: " + casilla);
+
+        // Accedemos a un elemento de la lista
+        int firstNumber = casilla.get(0);
+        System.out.println("Accedemos al primer elemento y tenemos su valor de la lista: " + firstNumber);
+
+        // Modificamos un elemento de la lista
+        casilla.set(3, 50);
+        casilla.set(2, 44);
+        casilla.set(6, 81);
+        casilla.set(7, 100);
+        System.out.println("Lista de números modificada: " + casilla);
+
+        // Eliminamos un elemento de la lista
+        casilla.remove(6);
+        System.out.println("Lista de números después de eliminar un elemento: " + casilla);
         
         
         System.out.println("\n");
@@ -103,6 +141,18 @@ public class Punto_1_3_Del_Ejercicio_1 {
             }
             System.out.println();
         }
+        System.out.println("\n");
+        // Imprimimos el tamaño de la lista de números
+        System.out.println("Tamaño de la lista de números: " + xNumero);
+
+        // Accedemos a un elemento de la lista
+        int numeroPrimario = xNumero.get(2);
+        System.out.println("Accedemos al tercer elemento y tenemos su valor de la lista: " + numeroPrimario);
+
+        // Eliminamos un elemento de la lista
+        xNumero.remove(2);
+        System.out.println("Lista de números después de eliminar un elemento: " + xNumero);
+        
     }
     public static void seleccion(List<Integer> factor) {
         int k = 0, e=0;
@@ -118,7 +168,8 @@ public class Punto_1_3_Del_Ejercicio_1 {
             int x = factor.get(m);
             factor.set(m, factor.get(b));
             factor.set(b, x);
-        }    
+        }
+        
     }
     
     public static void casillero(List<Integer> casilla){
